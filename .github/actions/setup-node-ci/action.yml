@@ -1,0 +1,18 @@
+# Composite action pour éviter la duplication (Exo 5)
+# Équivalent des Anchors / extends GitLab
+name: Setup Node and install
+description: Checkout, Node 20, cache npm, npm ci
+runs:
+  using: composite
+  steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: "20"
+        cache: "npm"
+
+    - name: Install dependencies
+      run: npm ci --prefer-offline
+      shell: bash
