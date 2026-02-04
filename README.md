@@ -20,7 +20,7 @@ La pipeline CI inclut un job **Docker Build & Push** qui :
 ### Prérequis
 
 1. **Compte Docker Hub** : [hub.docker.com](https://hub.docker.com) — créez un compte si besoin.
-2. **Token d’accès** : Docker Hub → Account Settings → Security → New Access Token (lecture/écriture pour les repos).
+2. **Token d’accès** : Docker Hub → Account Settings → Security → New Access Token. **Important** : choisir **Read & Write** (pas Read-only), sinon le push échoue avec « access token has insufficient scopes ».
 
 ### Configuration des secrets GitHub
 
